@@ -1,0 +1,45 @@
+@import '../../../global';
+
+.usuario
+{
+    @include flex($justify: space-between, $align: center);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 280px;
+    // background-color: red;
+    @media (min-width: 720px) {
+        max-width: 350px;
+    }
+
+    &__contenedor
+    {
+        @include flex($align: center);
+        margin-right: 15px;
+        &__icono
+        {
+            margin-right: 10px;
+            svg
+            {
+                height: 50px;
+                width:  50px;
+                background-color: $color-gris-oscuro;
+                fill: white;
+                border-radius: 100%;
+                padding: 5px;
+            }
+        }
+
+        &__info
+        {
+            &__nombre
+            {
+                font-weight: bold;
+            }
+
+            &__email
+            {
+                color: $color-gris-oscuro;
+            }
+        }
+    }
+}

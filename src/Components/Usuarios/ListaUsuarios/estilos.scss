@@ -1,0 +1,36 @@
+@import '../../../global';
+
+.contenedor-principal.lista-usuarios
+{
+    .contenedor-principal__contenedor
+    {
+        &__contenido
+        {
+            display: grid;
+            justify-content: center;
+            grid-auto-flow: row;
+            position: relative;
+
+            @media (min-width: 1330px) {
+                // @include flex($wrap: wrap, $justify: space-around);
+                justify-content: space-between;
+                grid-template-columns: repeat(3, 320px);
+            }
+
+            @media (min-width: 1055px) and (max-width: 1330px) {
+                // @include flex($wrap: wrap, $justify: space-around);
+                justify-content: flex-start;
+                grid-template-columns: repeat(2, 320px);
+                grid-column-gap: 30px;
+
+            }
+
+
+            & .usuario
+            {
+                // margin-right: 40px;
+                overflow: auto;
+            }
+        }
+    }
+}

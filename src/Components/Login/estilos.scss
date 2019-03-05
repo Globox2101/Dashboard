@@ -1,0 +1,157 @@
+@import '../../global';
+
+.boton
+{
+    @include flex($align: center, $justify: center);    
+    border-radius: 5px;
+    width:  50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: black;
+}
+
+    .boton--negro
+    {
+        background-color: $color-secundario;
+        color: $color-blanco;
+    }
+
+    .boton--amarillo
+    {
+        background-color: $color-primario;   
+        transition: 0.3s;
+        &:hover
+        {
+            background-color: $color-primario-oscuro;
+            cursor: pointer;
+        }
+    }
+
+.input
+{
+    border: 1px solid $color-gris-oscuro;
+    background-color: transparent;
+    padding-top:    10px;
+    padding-bottom: 10px;
+    padding-left:   5px;
+    border-radius: 5px;
+    // font-size: 1.2em;
+    
+    
+    &__icon
+    {
+        @include flex($align: center, $justify: center);
+        svg
+        {
+            height: 30px;
+            width:  30px;
+        }
+    }
+
+    &:focus
+    {
+        border: 1px solid $color-primario-oscuro;
+        box-shadow: 0 0 1px $color-primario;
+    }
+}
+
+
+
+
+.login
+{
+    background-image: url('../../static/fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    @include flex($align: center, $justify: center);
+
+    &__contenedor
+    {
+        background-color: $color-gris;
+        width:  300px;
+        height: 430px;
+        margin-top:     50px;
+        margin-bottom:  50px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+        padding: 10px 40px;
+        position: relative;
+
+        @media (min-width: 720px) {
+            width: 370px;
+            height: 430px;    
+        }
+
+        &__encabezado
+        {
+            @include flex($align: center, $justify: center);
+            height: 120px;
+            font-size: 2.5em;
+            font-family: titulo;
+            svg
+            {
+                height: 50px;
+                width:  50px;
+            }
+        }
+
+        &__opciones
+        {
+            @include flex($align: center, $justify: center, $wrap: wrap);
+
+            &__recordar
+            {
+                @include flex($align: center, $justify: center);
+                width: 100%;
+                margin-bottom: 10px;
+                margin-top: 15px;
+
+                input[type="checkbox"]
+                {
+                    margin-right: 5px;
+                }
+            }
+
+            &__olvidar
+            {
+                
+            }
+        }
+
+        &__campos
+        {
+            margin-bottom: 15px;
+            padding-right: 5px;
+            &__input
+            {
+                @include flex($align: center, $justify: space-between);
+                margin-bottom: 15px;
+
+                & .input
+                {
+                    width: calc(100% - 40px);
+                }
+            }
+        }
+
+        &__botones
+        {
+            @include flex($align: center, $justify: space-between);      
+            margin-top: 30px;
+            width: 100%;
+            &__boton
+            {
+                width: 100%;
+
+                &:first-child
+                {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
